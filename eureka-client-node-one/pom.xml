@@ -18,6 +18,14 @@
 	</parent>
 
 	<dependencies>
+
+		<!--<dependency>
+			<groupId>com.company</groupId>
+			<artifactId>common-module</artifactId>
+			<version>1.0-SNAPSHOT</version>
+		</dependency>-->
+
+
 		<!--在实际工作过程中，重试是一个经常使用的手段。比如MQ发送消息失败，会采取重试手段，
 		比如工程中使用RPC请求外部服务,可能因为网络		波动出现超时而采取重试手段......
 		可以看见重试操作是非常常见的一种处理问题,系统设计的手段
@@ -46,14 +54,26 @@
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka</artifactId>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-bus-amqp</artifactId>
 		</dependency>
 
-		<dependency>
+	<!--	<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-sleuth</artifactId>
+		</dependency>
+-->
+		<!--负载均衡-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-ribbon</artifactId>
+		</dependency>
+		<!-- 断路器-->
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-hystrix</artifactId>
 		</dependency>
 
 	</dependencies>

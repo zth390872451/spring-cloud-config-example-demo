@@ -1,10 +1,13 @@
-package com.web.domain;
+/*
+package com.company.web.domain;
 
 import javax.persistence.*;
 
+*/
 /**
  * Created by Administrator on 2016/11/23 0023.
- */
+ *//*
+
 @Table(name = "zth_user")
 @Entity
 public class User {
@@ -38,3 +41,4 @@ public class User {
         this.password = password;
     }
 }
+*/

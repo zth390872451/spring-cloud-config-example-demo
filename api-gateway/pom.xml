@@ -17,6 +17,7 @@
             <artifactId>common-module</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+
         <!--zuul api gateway-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -32,6 +33,7 @@
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-server</artifactId>
         </dependency>
+
     </dependencies>
 
 

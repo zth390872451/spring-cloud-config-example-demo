@@ -1,18 +1,24 @@
-package com.web.config;
+/*
+package com.company.web.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+*/
 /*
         *spring MVC 配置
-*/
+*//*
+
 
 @Configuration
 public class WebConfiguration extends WebMvcConfigurerAdapter {
-    /*@Value("${server.context-path}")
+    */
+/*@Value("${server.context-path}")
     private String contextPath;
-*/
-    /*@Bean
+*//*
+
+    */
+/*@Bean
     public TemplateResolver defaultTemplateResolver() {
         TemplateResolver resolver = new TemplateResolver();
         resolver.setResourceResolver(thymeleafResourceResolver());
@@ -26,6 +32,8 @@ public class WebConfiguration extends WebMvcConfigurerAdapter {
     @Bean
     public SpringResourceResourceResolver thymeleafResourceResolver() {
         return new SpringResourceResourceResolver();
-    }*/
+    }*//*
+
 
 }
+*/

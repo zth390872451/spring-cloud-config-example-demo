@@ -1,4 +1,5 @@
-package com.web.component;
+/*
+package com.company.web.component;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.actuate.health.CompositeHealthIndicator;
@@ -6,15 +7,16 @@ import org.springframework.boot.actuate.health.Health;
 import org.springframework.boot.actuate.health.HealthAggregator;
 import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 
+*/
 /*
  * 定义自己的health indicator
- */
+ *//*
+
 @Component
 public class DbCountHealthIndicator implements HealthIndicator {
 
@@ -52,3 +54,4 @@ public class DbCountHealthIndicator implements HealthIndicator {
     }
 
 }
+*/

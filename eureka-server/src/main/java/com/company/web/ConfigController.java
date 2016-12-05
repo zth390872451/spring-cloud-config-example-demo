@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class ConfigController {
 
-    @Value("${configName:defaultFrom}")
+    @Value("${configName:defaultLocal}")
     private String configName;
 
     public String getConfigName() {

@@ -44,6 +44,10 @@ public class AccessFilter extends ZuulFilter {
         return true;
     }
 
+    /**
+     * 访问的url必须有 accessToken 参数
+     * @return
+     */
     @Override
     public Object run() {
         RequestContext ctx = RequestContext.getCurrentContext();
@@ -56,7 +60,7 @@ public class AccessFilter extends ZuulFilter {
             log.warn("access token is empty");
             ctx.setSendZuulResponse(false);
             ctx.setResponseStatusCode(401);
-            return null;
+            return "forbidden request,missing the accessToken parameter";
         }
         log.info("access token ok");
         return null;

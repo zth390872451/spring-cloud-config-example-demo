@@ -1,4 +1,5 @@
-package com.web.component;
+/*
+package com.company.web.component;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -9,9 +10,11 @@ import org.springframework.stereotype.Component;
 
 import java.util.Collection;
 
+*/
 /**
  * 实现 CommandLineRunner 接口，将在应用启动后执行 run 方法
- */
+ *//*
+
 @Component
 public class DbCountRunner implements CommandLineRunner {
 
@@ -44,4 +47,4 @@ public class DbCountRunner implements CommandLineRunner {
         return "UnknownRepository";
     }
 
-}
+}*/

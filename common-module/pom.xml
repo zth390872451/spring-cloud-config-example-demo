@@ -12,42 +12,42 @@
     <artifactId>common-module</artifactId>
 
     <dependencies>
-        <!--健康监控：可通过 url 查看应用相关信息：比如映射、系统磁盘空间、数据库连接状态等-->
+      <!--  &lt;!&ndash;健康监控：可通过 url 查看应用相关信息：比如映射、系统磁盘空间、数据库连接状态等&ndash;&gt;
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
-        <!-- jpa 和 JdbcTemplate-->
+        &lt;!&ndash; jpa 和 JdbcTemplate&ndash;&gt;
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
         </dependency>
-        <!--mysql-->
+        &lt;!&ndash;mysql&ndash;&gt;
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
             <version>5.1.27</version>
         </dependency>
-        <!--lang-->
+        &lt;!&ndash;lang&ndash;&gt;
         <dependency>
             <groupId>commons-lang</groupId>
             <artifactId>commons-lang</artifactId>
             <version>2.6</version>
         </dependency>
-      <!--  &lt;!&ndash;embed-tomcat&ndash;&gt;
+      &lt;!&ndash;  &lt;!&ndash;embed-tomcat&ndash;&gt;
         <dependency>
             <groupId>org.apache.tomcat.embed</groupId>
             <artifactId>tomcat-embed-jasper</artifactId>
             <scope>provided</scope>
         </dependency>
 
--->
+&ndash;&gt;
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
-        <!--spring-boot-admin 模块：可作为监控中心，类似服务注册中心，提供注册-->
+        &lt;!&ndash;spring-boot-admin 模块：可作为监控中心，类似服务注册中心，提供注册&ndash;&gt;
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-server</artifactId>
@@ -58,6 +58,12 @@
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-server-ui</artifactId>
             <version>1.3.2</version>
+        </dependency>
+-->
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
     </dependencies>
