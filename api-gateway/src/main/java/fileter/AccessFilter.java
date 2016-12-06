@@ -7,6 +7,13 @@ import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * 服务过滤:对外开放服务还需要一些安全措施来保护客户端只能访问它应该访问到的资源
+ *
+ * 定义了一个Zuul过滤器，实现了在请求被路由之前检查请求中是否有accessToken参数，
+ * 若有就进行路由，若没有就拒绝访问，返回401 Unauthorized错误
+ *
+ */
 public class AccessFilter extends ZuulFilter {
 
     private static Logger log = LoggerFactory.getLogger(AccessFilter.class);
@@ -45,7 +52,8 @@ public class AccessFilter extends ZuulFilter {
     }
 
     /**
-     * 访问的url必须有 accessToken 参数
+     * run():过滤器的具体逻辑
+     * 业务逻辑：访问的url必须有 accessToken 参数
      * @return
      */
     @Override
@@ -58,8 +66,8 @@ public class AccessFilter extends ZuulFilter {
         Object accessToken = request.getParameter("accessToken");
         if (accessToken == null) {
             log.warn("access token is empty");
-            ctx.setSendZuulResponse(false);
-            ctx.setResponseStatusCode(401);
+            ctx.setSendZuulResponse(false);//zuul过滤该请求，不对其进行路由
+            ctx.setResponseStatusCode(401);//无权访问
             return "forbidden request,missing the accessToken parameter";
         }
         log.info("access token ok");

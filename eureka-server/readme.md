@@ -1,4 +1,6 @@
-参考链接：http://blog.didispace.com/springcloud7/
+*_项目搭建_*：参考链接：http://blog.csdn.net/liaokailin/article/details/51469834
+
+
 spring-cloud-config各个模块总结：
 rabbitmq作为消息总线的组件
 eureka-server作为注册中心
@@ -35,5 +37,14 @@ rabbit-node1和node2作为客户端，可从配置服务器设置的git仓库按
     
 番外：参考的链接所共享的文章对应的github项目中，在config-server是没有必要在resources目录下添加多余的didispace*.properties文件的。
     
+
+注意：取消eureka的保护机制：
+    客户端添加：
+    eureka.instance.lease-renewal-interval-in-seconds=5
+    eureka.instance.lease-expiration-duration-in-seconds=5
+    注册中心添加：
+    eureka.server.enable-self-preservation=false
+    (为什么要取消？为true时：当服务宕机了，页面会出现红色警告切服务依旧显示存在(正常现象)，等90s之后将会消失)
+    (取消的结果：立马消失)
     
     

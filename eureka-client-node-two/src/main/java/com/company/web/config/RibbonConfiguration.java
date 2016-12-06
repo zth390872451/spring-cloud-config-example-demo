@@ -22,7 +22,7 @@ public class RibbonConfiguration {
         return new RestTemplate();
     }
     /*
-        更改默认的均衡负载的算法
+        更改默认的均衡负载的算法: 设置为 轮询选择server
         AvailabilityFilteringRule方式(默认算法)：过滤掉那些因为一直连接失败的被标记为circuit tripped的后端server，
         并过滤掉那些高并发的的后端server（active connections 超过配置的阈值）
         roundRobin方式：轮询选择server

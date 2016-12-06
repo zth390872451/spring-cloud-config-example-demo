@@ -19,17 +19,19 @@
 
 	<dependencies>
 		<!--测试私服的jar包，这个包将从私服中pull-->
-  		<dependency>
+  		<!--<dependency>
             <groupId>javax.xml.crypto</groupId>
             <artifactId>xmldsig</artifactId>
             <version>1.0</version>
-        </dependency>
-
+        </dependency>-->
+		<!--服务注册中心，eureka的服务器端-->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-eureka-server</artifactId>
 		</dependency>
 
 	</dependencies>
+
+
 
 </project>

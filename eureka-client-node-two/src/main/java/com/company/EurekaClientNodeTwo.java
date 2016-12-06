@@ -5,7 +5,7 @@ import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.cloud.client.circuitbreaker.EnableCircuitBreaker;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
-@EnableDiscoveryClient
+@EnableDiscoveryClient//开启
 @SpringBootApplication
 @EnableCircuitBreaker //  注解开启断路器功能
 public class EurekaClientNodeTwo {
