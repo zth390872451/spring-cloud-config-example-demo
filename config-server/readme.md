@@ -1,6 +1,7 @@
 *_项目搭建_*：参考链接： http://blog.didispace.com/springcloud4/ (简单版) 
                      http://blog.didispace.com/springcloud4-2/ (加强版——消息总线)
-
+    配置服务器与消息总线结合基础：搭建RabbitMq环境——[ Centos 系统RabbitMQ学习之安装](http://blog.csdn.net/zhu_tianwei/article/details/40832185)
+    如果不需要消息总线：只需要将属性注释以及去除依赖就ok了。
 
 Spring Cloud Config：
 
@@ -31,6 +32,7 @@ Spring Cloud Config：
        config-server: 
         1、 eureka-client (相对于eureka-sever的客户端应用)
         2、 config-server (相对于eureka-client的服务器)
+
 
         
 
