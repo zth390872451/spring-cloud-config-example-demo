@@ -9,8 +9,8 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
  * Created by Administrator on 2016/11/30.
  */
 @SpringBootApplication
-@EnableAdminServer
-@EnableDiscoveryClient
+@EnableAdminServer//作为健康监测服务器
+@EnableDiscoveryClient//Eureka客户端节点
 public class SpringBootAdminServer {
 
     public static void main(String[] args) {

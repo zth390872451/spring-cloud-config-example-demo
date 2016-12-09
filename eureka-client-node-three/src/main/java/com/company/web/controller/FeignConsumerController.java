@@ -1,6 +1,9 @@
 package com.company.web.controller;
 
+import com.company.web.api.UserApi;
+import com.company.web.domain.User;
 import com.company.web.service.ComputeClient;
+import com.company.web.service.UserFeignClient;
 import com.company.web.util.ApplicationSupport;
 import com.netflix.loadbalancer.ILoadBalancer;
 import com.netflix.loadbalancer.IRule;
@@ -29,6 +32,8 @@ public class FeignConsumerController {
     private static final Logger logger = LoggerFactory.getLogger(FeignConsumerController.class);
 
     @Autowired
+    UserFeignClient userFeignClient;
+    @Autowired
     ComputeClient computeClient;
 
     /**
@@ -41,5 +46,18 @@ public class FeignConsumerController {
         String result = computeClient.add(10, 30);
         return result;
     }
+
+    /**
+     *
+     * @return
+     */
+    @RequestMapping(value = "/feign_user", method = RequestMethod.GET)
+    public User feignUser() {
+        logger.info("{}", "Feign 客户端调用服务端服务");
+        User user = userFeignClient.getUser(1);
+        return user;
+    }
+
+
 
 }

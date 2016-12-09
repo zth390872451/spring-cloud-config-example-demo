@@ -62,4 +62,9 @@
 		</dependencies>
 	</dependencyManagement>
 
+	<build>
+		<!--定义包名，默认格式为：${artifactId}-${version}.jar  -->
+		<!-- eureka-server-1.0.0.jar -->
+		<finalName>eureka-server</finalName>
+	</build>
 </project>

@@ -15,6 +15,7 @@ import static org.apache.coyote.http11.Constants.a;
  * Created by Administrator on 2016/12/5.
  */
 @RestController
+@RequestMapping("/selectService")
 public class TestServiceController {
     private static final Logger logger = LoggerFactory.getLogger(TestServiceController.class);
     @Autowired
