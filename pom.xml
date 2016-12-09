@@ -36,14 +36,16 @@
     </parent>
 
     <dependencies>
-        <!--<dependency>
+        <!-- 日志：traceId and spanId 将在http请求间传递-->
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
-        </dependency>-->
+        </dependency>
     </dependencies>
 
 
     <dependencyManagement>
+        <!--版本管理，子模块所有与之相关的依赖如果没指定版本则使用父模块默认的，如果指定了，子模板优先-->
         <dependencies>
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
