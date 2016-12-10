@@ -1,3 +1,6 @@
+ Spring-Cloud—Book书籍：https://git.oschina.net/itmuch/spring-cloud-book/commit/11c1e31c36fbacc3bf56de7262acccd8d2165d7b
+Spring Cloud为开发者提供了在分布式系统(如配置管理、服务发现、断路器、智能路由、微代理、控制总线、一次性Token、全局锁、决策竞选、分布式会话和集群状态)操作的开发工具。使用SpringCloud开发者可以快速实现上述这些模式。
+
  服务注册中心(Eureka的服务器端):
     应用程序名称：eureka-server
      应用名称：eureka-server

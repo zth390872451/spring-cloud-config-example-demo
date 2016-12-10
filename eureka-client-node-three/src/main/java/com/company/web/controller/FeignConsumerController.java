@@ -1,26 +1,17 @@
 package com.company.web.controller;
 
-import com.company.web.api.UserApi;
 import com.company.web.domain.User;
 import com.company.web.service.ComputeClient;
 import com.company.web.service.UserFeignClient;
-import com.company.web.util.ApplicationSupport;
-import com.netflix.loadbalancer.ILoadBalancer;
-import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RoundRobinRule;
-import com.netflix.loadbalancer.Server;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+//import org.slf4j.Logger;
+//import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.cloud.client.discovery.DiscoveryClient;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
-import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * Ribbon 客户端 消费add 服务（使用2种方式）
@@ -29,8 +20,8 @@ import java.util.List;
 @RestController
 public class FeignConsumerController {
 
-    private static final Logger logger = LoggerFactory.getLogger(FeignConsumerController.class);
-
+//    private static final Logger logger = LoggerFactory.getLogger(FeignConsumerController.class);
+        private static final Logger log = Logger.getLogger(FeignConsumerController.class.getName());
     @Autowired
     UserFeignClient userFeignClient;
     @Autowired
@@ -42,10 +33,11 @@ public class FeignConsumerController {
      */
     @RequestMapping(value = "/feign_consumer", method = RequestMethod.GET)
     public String add() {
-        logger.info("{}", "Spring-feign-service-add2 method");
+//        logger.info("{}", "Spring-feign-service-add2 method");
         String result = computeClient.add(10, 30);
         return result;
     }
+
 
     /**
      *
@@ -53,11 +45,12 @@ public class FeignConsumerController {
      */
     @RequestMapping(value = "/feign_user", method = RequestMethod.GET)
     public User feignUser() {
-        logger.info("{}", "Feign 客户端调用服务端服务");
+//        logger.info("{}", "Feign 客户端调用服务端服务");
+//        logger.info("calling trace demo backend");
+        log.log(Level.INFO, "calling trace demo backend");
         User user = userFeignClient.getUser(1);
         return user;
     }
-
 
 
 }
