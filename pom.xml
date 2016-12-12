@@ -22,7 +22,7 @@
 
         <module>test-spring-boot-admin</module>
         <module>test-spring-cloud-zipkin</module>
-        <module>test-spring-cloud-sleuth</module>
+        <!--<module>test-spring-cloud-sleuth</module>-->
         <module>compute-service-node-one</module>
         <module>compute-service-node-two</module>
 
@@ -73,8 +73,9 @@
             </plugin>
         </plugins>
     </build>
+<!--
 
-    <!--私服地址-->
+    &lt;!&ndash;私服地址&ndash;&gt;
     <repositories>
         <repository>
             <id>nexus</id>
@@ -82,7 +83,7 @@
             <url>http://115.159.184.85:8081/nexus/content/groups/public</url>
         </repository>
     </repositories>
-    <!--私服插件-->
+    &lt;!&ndash;私服插件&ndash;&gt;
     <pluginRepositories>
         <pluginRepository>
             <id>nexus</id>
@@ -90,5 +91,6 @@
             <url>http://115.159.184.85:8081/nexus/content/groups/public</url>
         </pluginRepository>
     </pluginRepositories>
+-->
 
 </project>

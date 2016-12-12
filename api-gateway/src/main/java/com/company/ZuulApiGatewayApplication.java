@@ -1,10 +1,12 @@
-package main;
+package com.company;
 
-import fileter.AccessFilter;
+//import com.company.web.fileter.AccessFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
 import org.springframework.context.annotation.Bean;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * 使用@EnableZuulProxy注解激活zuul。
@@ -12,12 +14,17 @@ import org.springframework.context.annotation.Bean;
  */
 @SpringBootApplication
 @EnableZuulProxy
+@RestController
 public class ZuulApiGatewayApplication {
 
-    @Bean
+    @RequestMapping("home")
+    public String home(){
+        return "home";
+    }
+    /*@Bean
     public AccessFilter accessFilter() {
         return new AccessFilter();
-    }
+    }*/
 
     public static void main(String[] args) {
         SpringApplication.run(ZuulApiGatewayApplication.class, args);
