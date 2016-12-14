@@ -4,8 +4,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration;
-import org.springframework.security.oauth2.config.annotation.web.configuration.EnableAuthorizationServer;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,9 +11,10 @@ import org.springframework.web.bind.annotation.RestController;
  * 认证服务器
  */
 @RestController
-@SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
-@EnableAuthorizationServer
+//@SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
+//@EnableAuthorizationServer
 //@EnableDiscoveryClient
+@SpringBootApplication
 public class OAuthServer {
     private static Logger log = LoggerFactory.getLogger(OAuthServer.class);
 

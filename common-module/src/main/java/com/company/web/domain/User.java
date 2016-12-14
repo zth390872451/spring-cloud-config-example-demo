@@ -4,12 +4,13 @@ import javax.persistence.*;
 import java.io.Serializable;
 @Table(name = "zth_user")
 @Entity
-//@EntityListeners(EntityListener.class)
-public class User {
+public class User implements Serializable{
+    private static final long serialVersionUID = 100007152668882L;
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-    private String userName;
+    private String loginName;
+    private String mobile;
     private String password;
     /**
      * oauth2认证的clientId
@@ -20,11 +21,24 @@ public class User {
         super();
     }
 
+
     public User(User user){
         this.id = user.getId();
-        this.userName = user.getUserName();
+        this.mobile = user.getMobile();
+        this.loginName = user.getLoginName();
         this.password = user.getPassword();
+    }
 
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public static long getSerialVersionUID() {
+        return serialVersionUID;
     }
 
     public String getClientId() {
@@ -43,12 +57,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUserName() {
-        return userName;
+    public String getLoginName() {
+        return loginName;
     }
 
-    public void setUserName(String userName) {
-        this.userName = userName;
+    public void setLoginName(String loginName) {
+        this.loginName = loginName;
     }
 
     public String getPassword() {

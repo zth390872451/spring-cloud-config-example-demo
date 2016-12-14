@@ -1,6 +1,7 @@
 package com.company;
 
 //import com.company.web.fileter.AccessFilter;
+import com.company.web.fileter.AccessFilter;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
@@ -21,10 +22,10 @@ public class ZuulApiGatewayApplication {
     public String home(){
         return "home";
     }
-    /*@Bean
+    @Bean
     public AccessFilter accessFilter() {
         return new AccessFilter();
-    }*/
+    }
 
     public static void main(String[] args) {
         SpringApplication.run(ZuulApiGatewayApplication.class, args);
