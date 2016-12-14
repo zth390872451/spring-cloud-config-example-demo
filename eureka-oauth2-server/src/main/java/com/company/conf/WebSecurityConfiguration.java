@@ -16,7 +16,7 @@
 
 package com.company.conf;
 
-import com.company.service.CustomUserDetailsServiceSelf;
+import com.company.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -34,11 +34,11 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
 	
 
 	@Autowired
-	private CustomUserDetailsServiceSelf userDetailsService;
+	private CustomUserDetailsService customUserDetailsService;
 	
 	@Override
 	protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-		 auth.userDetailsService(userDetailsService);
+		 auth.userDetailsService(customUserDetailsService);
 	}
 
 	@Override

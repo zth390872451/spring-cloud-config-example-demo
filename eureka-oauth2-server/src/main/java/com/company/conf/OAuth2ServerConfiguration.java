@@ -1,6 +1,6 @@
 package com.company.conf;
 
-import com.company.service.CustomUserDetailsServiceSelf;
+import com.company.service.CustomUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +14,7 @@ import org.springframework.security.oauth2.config.annotation.web.configurers.Aut
 import org.springframework.security.oauth2.provider.code.AuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.code.JdbcAuthorizationCodeServices;
 import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
+
 import javax.sql.DataSource;
 
 @Configuration
@@ -29,7 +30,7 @@ public class OAuth2ServerConfiguration extends AuthorizationServerConfigurerAdap
 	private BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 
 	@Autowired
-	private CustomUserDetailsServiceSelf userDetailsService;
+	private CustomUserDetailsService customUserDetailsService;
 
 	@Bean
 	public JdbcTokenStore tokenStore() {
@@ -65,7 +66,7 @@ public class OAuth2ServerConfiguration extends AuthorizationServerConfigurerAdap
 	@Override
 	public void configure(AuthorizationServerEndpointsConfigurer endpoints)throws Exception {
 		endpoints.authorizationCodeServices(authorizationCodeServices())
-				.authenticationManager(authenticationManager).tokenStore(tokenStore()).userDetailsService(userDetailsService);
+				.authenticationManager(authenticationManager).tokenStore(tokenStore()).userDetailsService(customUserDetailsService);
 	}
 
 	/**
