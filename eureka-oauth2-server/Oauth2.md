@@ -174,3 +174,25 @@ CREATE TABLE `zth_user` (
 INSERT INTO `zth_user` VALUES ('15019271281', 'e10adc3949ba59abbe56e057f20f883e', '1', 'wherecom_k1_tinytrackv3_api_ios', '15019271281', '15019271281');
 
 
+/*
+	  INSERT INTO oauth_client_details (
+			client_id,
+			client_secret,
+			scope,
+			authorized_grant_types,
+			authorities,
+			access_token_validity
+		)
+		VALUES
+			(
+				'wxb_doki_api_ios',
+				'$2a$10$/AgahDVVEckNZt18ZIrQVONkXVx/NG.srm9tX6JgkZ8r8ULeLr3o.',
+				'read,write',
+				'client_credentials,refresh_token',
+				'USER',
+				'2592000'
+			)
+*/
+
+
+
