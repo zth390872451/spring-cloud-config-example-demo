@@ -2,6 +2,7 @@ package com.company.web.conf;
 
 import com.company.web.fileter.Oauth2Interceptor;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
@@ -9,6 +10,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 @EnableWebMvc
+@EnableWebSecurity
 public class InterceptorRegisterConfiguration extends WebMvcConfigurerAdapter{
 	
 	@Override
@@ -18,6 +20,7 @@ public class InterceptorRegisterConfiguration extends WebMvcConfigurerAdapter{
     	.excludePathPatterns("/api/oauth2/**");
 
     }
+
 	
 	//静态资源路径配置
 	@Override
@@ -25,4 +28,6 @@ public class InterceptorRegisterConfiguration extends WebMvcConfigurerAdapter{
             registry.addResourceHandler("/resources/**")
                     .addResourceLocations("/resources/");
     }
+
+
 }

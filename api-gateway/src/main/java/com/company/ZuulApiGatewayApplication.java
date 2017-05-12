@@ -1,20 +1,22 @@
 package com.company;
 
 //import com.company.web.fileter.AccessFilter;
-import com.company.web.fileter.AccessFilter;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.zuul.EnableZuulProxy;
-import org.springframework.context.annotation.Bean;
+import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import javax.sql.DataSource;
 
 /**
  * 使用@EnableZuulProxy注解激活zuul。
  * 跟进该注解可以看到该注解整合了@EnableCircuitBreaker、@EnableDiscoveryClient，是个组合注解，目的是简化配置。
  */
-@SpringBootApplication
-@EnableZuulProxy
+@SpringBootApplication(exclude = {SecurityAutoConfiguration.class })
+//@EnableZuulProxy
 @RestController
 public class ZuulApiGatewayApplication {
 
@@ -22,11 +24,18 @@ public class ZuulApiGatewayApplication {
     public String home(){
         return "home";
     }
-    @Bean
+    /*@Bean
     public AccessFilter accessFilter() {
         return new AccessFilter();
-    }
-
+    }*/
+    @Autowired
+    DataSource dataSource;
+    /*@Bean
+    public DefaultTokenServices defaultTokenServices(){
+        DefaultTokenServices defaultTokenServices = new DefaultTokenServices();
+        defaultTokenServices.setTokenStore(new JdbcTokenStore(dataSource));
+        return defaultTokenServices;
+    }*/
     public static void main(String[] args) {
         SpringApplication.run(ZuulApiGatewayApplication.class, args);
     }

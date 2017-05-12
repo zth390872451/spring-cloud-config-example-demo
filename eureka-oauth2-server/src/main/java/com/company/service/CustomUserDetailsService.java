@@ -76,7 +76,7 @@ public class CustomUserDetailsService implements UserDetailsService {
 	}
 	
 	/*public static void main(String[] args) {
-		String password = "4bd1kufizod95rlm157rxqfueb4ernj5";
+		String password = "k2appabc7893d34";
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
 		String hashedPassword = passwordEncoder.encode(password);
 		System.out.println(hashedPassword);

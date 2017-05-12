@@ -19,21 +19,21 @@
         </dependency>
 
         <!--zuul api gateway-->
-        <dependency>
+        <!--<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-zuul</artifactId>
-        </dependency>
+        </dependency>-->
         <!--  eureka 相关配置依赖包-->
-        <dependency>
+       <!-- <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka</artifactId>
         </dependency>
-        <!--Zipkin 是 Twitter 的一个开源项目,允许开发者收集 Twitter 各个服务上的监控数据,并提供查询接口-->
+        &lt;!&ndash;Zipkin 是 Twitter 的一个开源项目,允许开发者收集 Twitter 各个服务上的监控数据,并提供查询接口&ndash;&gt;
         <dependency>
             <groupId>io.zipkin.java</groupId>
             <artifactId>zipkin-server</artifactId>
         </dependency>
-
+-->
 
         <!--<dependency>
             <groupId>org.springframework.security.oauth</groupId>
